@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hotel Booking Complaint Form</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85f?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+    }
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 60px 20px;
+      min-height: 100vh;
+    }
+    .form-container {
+      max-width: 500px;
+      margin: auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 25px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+    button {
+      margin-top: 25px;
+      width: 100%;
+      padding: 12px;
+      background-color: #0070d2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005bb5;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="form-container">
+      <h2>Submit a Complaint</h2>
+      <form
+        action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8"
+        method="POST"
+      >
+        <!-- Replace with your actual Salesforce Org ID -->
+        <input type="hidden" name="orgid" value="00DgK000002MnkE" />
+        <!-- Optional redirect after submission -->
+        <input type="hidden" name="retURL" value="https://google.com/" />
+        <input type="hidden" name="origin" value="Web" />
+
+        <label for="email">Your Email</label>
+        <input type="email" name="email" required />
+
+        <label for="bookingid">Enter your Booking ID</label>
+        <!-- Replace 00NXXXXXXXXXXXXXXX with your Booking_ID__c field ID -->
+        <input type="text" name="00NXXXXXXXXXXXXXXX" required />
+
+        <label for="subject">Subject</label>
+        <input type="text" name="subject" required />
+
+        <label for="description">Complaint Description</label>
+        <textarea name="description" rows="5" required></textarea>
+
+        <button type="submit">Submit Complaint</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
