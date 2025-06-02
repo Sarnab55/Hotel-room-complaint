@@ -63,7 +63,7 @@
 <body>
   <div class="overlay">
     <div class="form-container">
-      <h2>Submit a Complaint</h2>
+      <h2>Submit a Complaint and Feedback</h2>
       <form
         action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8"
         method="POST"
@@ -84,10 +84,13 @@
         <label for="subject">Subject</label>
         <input type="text" name="subject" required />
 
+        <label for="Feedback">Feedback</label>
+        <textarea name="Feedback" rows="2" required></textarea>
+
         <label for="description">Complaint Description</label>
         <textarea name="description" rows="5" required></textarea>
 
-        <button type="submit">Submit Complaint</button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   </div>
